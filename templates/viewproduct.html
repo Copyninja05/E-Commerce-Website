@@ -1,0 +1,283 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/Whistel.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/product.css' %}"/>
+  
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inder&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Kumbh+Sans:wght,YOPQ@100..900,300&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Sevillana&display=swap"
+        rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <div class="overall">
+             <nav>
+                <div class="l-nav">
+                    <h1><b>Exclusive</b></h1>
+                </div>
+
+
+                <div class="m-nav">
+                   <a class="home a" href="{% url 'index' %}">Home</a>
+                    <a class="about a" href="{% url 'about' %}">About</a>
+                    <a class="contact a" href="{% url 'contact' %}">Contact</a>
+                    <a class="signup a" href="{% url 'signup' %}">Signup</a>
+                    <span></span>
+                </div>
+
+
+                <div class="r-nav">
+                    <div class="input">
+                        <input placeholder="What Are You Looking For ?"  />
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                    <i class="fa-regular fa-heart" style="font-size: 20px;"></i>
+                    <i class="fa-solid fa-cart-arrow-down" style="font-size: 20px;"></i>
+                    <i class="fa-solid fa-user"  style="font-size: 20px;"></i>
+                </div>
+            </nav>
+
+
+
+            <div class="container">
+                    <div class="hompro">
+                        <h3 style="color:gray">Account/</h3>
+                        
+                        <h3>{{ product.name }}</h3>
+                    </div>
+
+                    <div class="product-div">
+                                <div class="prod prod1">
+                                    <div class="prod11">
+                                        <div class="prod111 prod111">
+                                            <img src="{% static 'images/image 58.png' %}"/>
+                                        </div>
+                                        <div class="prod112 prod111">
+                                            <img src="{% static 'images/image 58.png' %}"/>
+                                        </div>
+                                        <div class="prod113 prod111">
+                                            <img src="{% static 'images/image 59.png' %}"/>
+                                        </div>
+                                        <div class="prod114 prod111">
+                                            <img src="{% static 'images/image 61.png' %}"/>
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="prod12">
+                                        <img src="{{ product.image.url }}"/>
+                                    </div>
+                                </div>
+
+
+
+
+
+                                <div class="prod prod2">
+                                    <h2>{{product.name }}</h2>
+                                    <div style="display:flex;gap:10px;align-items:center ;">
+                                    <h3 style="color:gold;padding: 5px;">*****</h3>
+                                    <h4>(150+ reviews)</h4>
+                                    <h4 style="color:green">| in stock</h4>
+                                    </div>
+                                    <h1>${{ product.price }}</h1>
+                                    <p style="font-size: 15px;">{{ product.descreption }}</p>
+                                    <hr/>
+                                    <div class="size">
+                                        <h4>size:</h4>
+                                        <div class="sizes sizes1">M</div>
+                                        <div class="sizes sizes2">L</div>
+                                        <div class="sizes sizes3">XL</div>
+                                        <div class="sizes sizes4">XXL</div>
+
+                                    </div>
+
+
+                                    <div class="count">
+                                    <div class="cou cou1">
+                                        <h1 onclick="minus()">-</h1>
+                                        <h1 id="num"></h1>
+                                        <h1 onclick="plus()">+</h1>
+                                    </div>
+                                    <div class="cou cou2">
+                                        <button><a href="{% url 'add_to_carts' product.id %}">BUY NOW</a></button>
+                                    </div>
+                                    <div class="cou cou3">
+                                        <i class="fa-regular fa-heart"></i>
+                                    </div>
+
+
+
+                                </div>
+
+
+                                <div class="free">
+                                    <div class="fre fre1">
+                                        <div class="fre11">
+                                            <img src="{% static 'images/icon-delivery.png' %}"/>
+                                        </div>
+                                        <div class="fre12">
+                                            <h4>Free Delevery</h4>
+                                            <p>Enter your postal code for Delivery Availability</p>
+                                        </div>
+                                    </div>
+
+
+
+
+
+
+                                    <div class="fre fre2">
+                                        <div class="fre11">
+                                            <img src="{% static 'images/icon-return.png' %}"/>
+                                        </div>
+                                        <div class="fre12">
+                                            <h4>Return Delevery</h4>
+                                            <p>Free 30 Days Delivery Returns. Details</p>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+
+
+
+                                </div>
+
+
+                                   
+
+
+
+
+
+
+
+
+                                
+
+                    </div>
+
+
+
+
+                    <div style="display: flex; justify-content: space-between; align-items: center;margin-top: 5%;">
+                        <h3>Related item</h3>
+                        
+                    </div>
+
+
+                    <div class="cards">
+                        {% for product in explore%}
+                        <div class="car car1">
+                            <div class="in-car">
+                                <div class="per">
+                                    <h4>40%</h4>
+                                    <div class="vf">
+                                        <div class="view">
+                                            <i class="fa-regular fa-eye"></i>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+
+
+                                <div style="height:126px;width:130px">
+                                    <img src="{{product.image.url}}" class="cart-img" />
+                                </div>
+                                                                <button style="width:100%;background-color: black;color: white;padding:5px;">Add To Cart</button>
+
+
+
+
+                            </div>
+                            <p>{{ product.name }}</p>
+                            <h3 style="color:red;text-align: left;">${{ product.price }}</h3>
+                            
+                        </div>
+                       {% endfor %}
+
+
+
+                     
+
+
+            </div>
+             
+
+
+
+
+    </div>
+    <div class="footer">
+
+                        <div class="fot fot1">
+                           <h2>Exclusive</h2>
+                           <p>Subscribe</p>
+                           <p>Get 10% off for first items</p>
+                            <div style="padding:4px;background-color: white;">
+                           <input placeholder=" Enter your Email"/>
+                           <i class="fa-solid fa-check"></i>
+                           </div>
+                        </div>
+
+
+
+                        <div class="fot fot2">
+                                <h2>Support</h2>
+                           <p>No 111 balaji st,pallavaram,chennai</p>
+                           <p>balaji123@gmail.com</p>
+                           <p>91+ 1234567890</p>
+                        </div>
+
+
+
+                        <div class="fot fot3">
+                            <h2>Account</h2>
+                           <p>My Account</p>
+                           <p>Cart</p>
+                           <p>Whistle</p>
+                           <p>Shop</p>
+                        </div>
+
+
+
+                        <div class="fot fot4">
+                            <h2>Quick Link</h2>
+                            <p>Privacy & Policy</p>
+                            <p>Terms & use</p>
+                            <p>FAQ</p>
+                            <p>Contact</p>
+                        </div>
+
+        </div>
+        <script>
+            let a=document.getElementById('num')
+            c=0
+            a.innerText=c
+            function plus(){
+                c=c+1
+                a.innerText=c
+                }
+
+            function minus(){
+            if (c>=1){
+                c=c-1
+                a.innerText=c
+            }
+                
+            }
+           
+        </script>
+</body>
+</html>
