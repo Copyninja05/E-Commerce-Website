@@ -1,0 +1,553 @@
+
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inder&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Kumbh+Sans:wght,YOPQ@100..900,300&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Sevillana&display=swap"rel="stylesheet">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="home">
+        <header>
+            <nav>
+                <div class="l-nav">
+                    <h1><b>Exclusive</b></h1>
+                </div>
+
+
+                <div class="m-nav">
+                    <a class="home" href="{% url 'index' %}">Home</a>
+                    <a class="about" href="{% url 'about' %}">About</a>
+                    <a class="contact" href="{% url 'contact' %}">Contact</a>
+                    <a class="signup" href="{% url 'signup' %}">Signup</a>
+                    <span></span>
+                </div>
+
+
+                <div class="r-nav">
+                    <div class="input">
+                        <input placeholder="What Are You Looking For ?" id="foc"/>
+                        <i class="fa-solid fa-magnifying-glass" id="ser"></i>
+                    </div>
+                    <i class="fa-regular fa-heart" style="font-size: 20px;" onclick="whistle()" data-whistle-url="{% url 'whistle' %}"></i>
+                    <i class="fa-solid fa-cart-arrow-down" style="font-size: 20px;" onclick="cart()" data-cart-url="{% url 'cart' %}"></i>
+                </div>
+            </nav>
+
+
+            <article>
+                <div class="art1 art">
+                    <h3>Womens Fashion's </h3>
+                    <h3>Mens Fashion's </h3>
+                    <h3>Electronics</h3>
+                    <h3>Home and lifestyle</h3>
+                    <h3>Medicen</h3>
+                    <h3>Sports & outdoors</h3>
+                    <h3>Baby toys</h3>
+                    <h3>gerousery & pets</h3>
+                    <h3>health & beauty</h3>
+                </div>
+
+
+                <div class="art2 art">
+                    <div class="art-bla">
+                        <div class="bla bla1">
+                            <div class="a-logo">
+                                <img src="{% static 'images/1200px-Apple_gray_logo_1.png' %}" id="img-1" />
+                                <p id="p-tag1">iphone 16 series</p>
+                            </div>
+
+                            <h1 id="h1-1">Upto 10 % <br />of voucher</h1>
+                            
+
+                        </div>
+
+
+                        <div class="bla bla2">
+                            <img src="{% static '/images/hero_endframe__cvklg0xk3w6e_large 2 (1).png' %}" id="mobile" />
+                            <button id="demo" style="display: none;"><i class="fa-solid fa-greater-than h3"></i></button>
+                        </div>
+
+
+                    </div>
+                </div>
+            </article>
+
+
+            <main>
+                <div class="cards-div">
+                    <div class="today">
+                        <div style="height:30px;width:17px;background-color:rgb(219, 68, 68);border-radius: 2px;"></div>
+                        <h4 style="color:#db4444">Today</h4>
+                    </div>
+
+                    <div class="flash">
+                        <div class="fls fls1">
+                            <h1>Flash Sale:</h1>
+                            <div class="stoptime">
+                                <div class="st st1">
+                                    <p>Days</p>
+                                    <h1 id="days">00</h1>
+                                </div>
+
+
+                                <div class="st st2">
+                                    <p>Hours</p>
+                                    <h1 id="hours">00</h1>
+                                </div>
+
+
+                                <div class="st st3">
+                                    <p>Minutes</p>
+                                    <h1 id="minutes">00</h1>
+                                </div>
+
+
+                                <div class="st st4">
+                                    <p>Seconds</p>
+                                    <h1 id="seconds">00</h1>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        
+                    </div>
+
+
+
+                    <div class="cards">
+                        {% for product in flash_sale %}
+                        <div class="car car1">
+                            <div class="in-car">
+                                <div class="per">
+                                    <h4>40%</h4>
+                                    <div class="vf">
+                                        <div class="view">
+                                            <a href="{% url 'viewproduct' product.id %}">
+                                                <i class="fa-regular fa-eye"></i>
+                                            </a>
+                                            
+                                        </div>
+                                        <div class="fav">
+                                            <a href="{% url 'add_to_whistle' product.id %}">
+                                            <i class="fa-regular fa-heart"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div style="height:126px;width:130px">
+                                    <img src="{{product.image.url}}" class="cart-img" />
+                                    
+                                </div>
+
+                                <button style="width:100%;background-color: black;color: white;padding:5px;">
+                                                                    <a href="{% url 'add_to_carts' product.id %}" style="color:white">Add To Cart</a></button>
+
+
+
+                            </div>
+                            <p>{{ product.name }}</p>
+                            <h3 style="color:red;text-align: left;">${{ product.price }}</h3>
+                            <img src="{% static 'images/Four Star.png' %}" class="f-star" />
+                            <span>(88)</span>
+                            
+                        </div>
+
+                        {% endfor %}
+                        
+                        
+                        </div>
+                        
+
+
+
+                    <div style="margin: auto;">
+                        <a href="#ourproduct">
+                        <button class="viewproduct">Views All Product</button>
+                        </a>
+                    </div>
+                </div>
+
+                <hr />
+
+                <div class="category">
+
+                    <div class="today">
+                        <div style="height:30px;width:17px;background-color:rgb(219, 68, 68);border-radius: 2px;"></div>
+                        <h4 style="color:#db4444">Category's</h4>
+                    </div>
+
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <h1>Brows By Category</h1>
+                        
+
+                    </div>
+
+                    <div class="cat-div">
+                        <div class="cat cat1">
+                            <img src="{% static 'images/Category-Camera (2).png' %}" />
+                            <h3>Camera</h3>
+                        </div>
+
+
+                        <div class="cat cat2">
+                            <img src="{% static 'images/Category-CellPhone.png' %}" />
+                            <h3>Cell Phone</h3>
+                        </div>
+
+
+                        <div class="cat cat3">
+                            <img src="{% static 'images/Category-Computer.png' %}" />
+                            <h3>Computer</h3>
+                        </div>
+
+
+                        <div class="cat cat4">
+                            <img src="{% static 'images/Category-Gamepad.png' %}" />
+                            <h3>Gamepad</h3>
+                        </div>
+
+
+                        <div class="cat cat5">
+
+                            <img src="{% static 'images/Category-Headphone.png' %}" />
+                            <h3>HeadPhone</h3>
+                        </div>
+
+                        <div class="cat cat6">
+                            <img src="{% static 'images/Category-SmartWatch.png' %}" />
+                            <h3>SmartWatch</h3>
+                        </div>
+
+
+
+                    </div>
+
+                </div>
+
+                <hr />
+
+                                       <!-- this month -->
+
+                <div class="thismonth">
+                    <div class="today">
+                        <div style="height:30px;width:17px;background-color:rgb(219, 68, 68);border-radius: 2px;"></div>
+                        <h4 style="color:#db4444">This Month</h4>
+                    </div>
+
+
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <h1>Best Selling Product</h1>
+                        <button class="viewall">View All</button>
+                    </div>
+
+
+                    <div class="cards">
+                        {% for product in best_selling %}
+                        <div class="car car1">
+                            <div class="in-car">
+                                <div class="per">
+                                    <h4>40%</h4>
+                                    <div class="vf">
+                                        <div class="view">
+                                          <a href="{% url 'viewproduct' product.id %}">
+                                                <i class="fa-regular fa-eye"></i>
+                                            </a>
+                                        </div>
+                                        <div class="fav">
+                                            <a href="{% url 'add_to_whistle' product.id %}">
+                                            <i class="fa-regular fa-heart"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div style="height:126px;width:130px">
+                                    <img src="{{ product.image.url }}" class="cart-img" />
+                                </div>
+
+                            <button style="width:100%;background-color: black;color: white;padding:5px;">
+                                                                    <a href="{% url 'add_to_carts' product.id %}" style="color:white">Add To Cart</a></button>
+
+
+
+                            </div>
+                            <p>{{ product.name }}</p>
+                            <h3 style="color:red;text-align: left;">${{ product.price }}</h3>
+                            <img src="{% static 'images/Four Star.png' %}" class="f-star" />
+                            <span>(88)</span>
+                        </div>
+                        {% endfor %}
+
+
+
+                       
+                    </div>
+
+                    <hr />
+
+                    <div class="blackspeaker">
+                        <div class="blsp blsp1">
+                            <h4>Catogerys</h4>
+                            <h1>Enhance Your Music Performance</h1>
+                            <div class="featture">
+                                <div>
+                                    <h4>23</h4>
+                                    <p>Hours</p>
+                                </div>
+
+                                <div>
+                                    <h4>05</h4>
+                                    <p>Days</p>
+                                </div>
+
+                                <div>
+                                    <h4>51</h4>
+                                    <p>Minute</p>
+                                </div>
+
+                                <div>
+                                    <h4>36</h4>
+                                    <p>Second</p>
+                                </div>
+
+                            </div>
+                            <button>Buy Now</button>
+                        </div>
+                        <div class="blsp blsp2">
+                            <div class="jbl">
+                                <img src="{% static 'images/jbl.png' %}" />
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                    <!-- our product -->
+                    <div id="ourproduct">
+                        <div class="today">
+                            <div style="height:30px;width:17px;background-color:rgb(219, 68, 68);border-radius: 2px;">
+                            </div>
+                            <h4 style="color:#db4444">This Month</h4>
+                        </div>
+
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <h1>Brows By Category</h1>
+                            
+
+                        </div>
+
+
+                        <div class="cards cartss">
+                            {% for product in products %}
+                            <div class="car car1">
+                                <div class="in-car">
+                                    <div class="per">
+                                        <h4>40%</h4>
+                                        <div class="vf">
+                                            <div class="view">
+                                              <a href="{% url 'viewproduct' product.id %}">
+                                                <i class="fa-regular fa-eye"></i>
+                                            </a>
+                                            </div>
+                                            <div class="fav">
+                                                <a href="{% url 'add_to_whistle' product.id %}">
+                                                <i class="fa-regular fa-heart"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div style="height:126px;width:130px">
+                                        <img src="{{ product.image.url }}" class="cart-img" />
+                                    </div>
+
+                                     <button style="width:100%;background-color: black;color: white;padding:5px;">
+                                                                    <a href="{% url 'add_to_carts' product.id %}" style="color:white">Add To Cart</a></button>
+
+
+
+                                </div>
+                                <p>{{ product.name }}</p>
+                                <h3 style="color:red;text-align: left;">${{ product.price }}</h3>
+                                <img src="{% static 'images/Four Star.png' %}" class="f-star" />
+                                <span>(88)</span>
+                            </div>
+                            {% endfor %}
+                         </div>
+                        <button class="viewproduct" style="margin: auto;">View All Product</button>
+                    </div>
+
+
+
+                    <!-- new arrival -->
+
+
+
+
+                    <div class="grid-div">
+
+                        <div class="today">
+                            <div style="height:30px;width:17px;background-color:rgb(219, 68, 68);border-radius: 2px;">
+                            </div>
+                            <h4 style="color:#db4444">This Month</h4>
+                        </div>
+
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <h1>Brows By Category</h1>
+
+                        </div>
+
+                        <div class="main-flex">
+                            <div class="flex flex1">
+                                <img src="{% static 'images/ps5.png' %}" />
+                                <h2>Play Station 5</h2>
+                                <p>Black And White Version Of Ps5 Comming Out Of Sale</p>
+                                
+                            </div>
+
+
+
+                            <div class="flex flex2">
+                                <div class="flex21">
+                                    <img src="{% static 'images/hat.png' %}" />
+                                    <h2>Women's Collection</h2>
+                                    <p>Feature Women's Collection That Give The Another Vibe</p>
+                                   
+                                </div>
+
+
+                                <div class="flex22">
+                                    <div class="flex221">
+                                        <img src="{% static 'images/bluetooth speaker.png' %}" />
+                                        <h2>Speaker</h2>
+                                        <p>Amazon Wireless Speakers</p>
+                                        
+                                    </div>
+
+
+
+                                    <div class="flex222">
+                                        <img src="{% static 'images/sent.png' %}" />
+                                        <h2>Perfume</h2>
+                                        <p>Gussi intence Oud Edp</p>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <!-- services -->
+                    <div class="services">
+                        <div class="services-div">
+                            <div class="ser ser1">
+                                <img src="{% static 'images/Services (1).png' %}" />
+                                <h3>Free and fast delevery</h3>
+                                <p>free order devevery for all over 140$</p>
+                            </div>
+                            <div class="ser ser2">
+                                <img src="{% static 'images/Services (2).png' %}" />
+                                <h3>24/7 customer services</h3>
+                                <p>Frendly 24/7 customer support</p>
+                            </div>
+                            <div class="ser ser3">
+                                <img src="{% static 'images/Services (3).png' %}" />
+                                <h3>Money return guarenty</h3>
+                                <p>We return money 30 Days</p>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+
+                    <!-- footer -->
+                  
+
+
+
+            </main>
+
+
+              <div class="footer">
+
+                        <div class="fot fot1">
+                            <h2>Exclusive</h2>
+                            <p>Subscribe</p>
+                            <p>Get 10% off for first items</p>
+                             
+                        </div>
+
+
+
+                        <div class="fot fot2">
+                            <h2>Support</h2>
+                            <p>No 111 balaji st,pallavaram,chennai</p>
+                            <p>balaji123@gmail.com</p>
+                            <p>91+ 1234567890</p>
+                        </div>
+
+
+
+                        <div class="fot fot3">
+                            <h2>Account</h2>
+                            <p>My Account</p>
+                            <p>Cart</p>
+                            <p>Whistle</p>
+                            <p>Shop</p>
+                        </div>
+
+
+
+                        <div class="fot fot4">
+                            <h2>Quick Link</h2>
+                            <p>Privacy & Policy</p>
+                            <p>Terms & use</p>
+                            <p>FAQ</p>
+                            <p>Contact</p>
+                        </div>
+
+
+
+                        <div class="fot fot5"></div>
+
+                    </div>
+
+
+
+
+        </header>
+
+
+
+
+
+
+
+
+    </div>
+    <script src="{% static 'js/index.js' %}"></script>
+</body>
+
+</html>

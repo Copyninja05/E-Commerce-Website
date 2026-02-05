@@ -1,0 +1,178 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" type="text/css" href="{% static 'css/about.css' %}"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inder&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Kumbh+Sans:wght,YOPQ@100..900,300&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Sevillana&display=swap"
+        rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <div class="overall">
+        
+            <nav>
+                <div class="l-nav">
+                    <h1><b>Exclusive</b></h1>
+                </div>
+
+
+                <div class="m-nav">
+                   <a class="home" href="{% url 'index' %}">Home</a>
+                    <a class="about" href="{% url 'about' %}">About</a>
+                    <a class="contact" href="{% url 'contact' %}">Contact</a>
+                    <a class="signup" href="{% url 'signup' %}">Signup</a>
+                    <span></span>
+                </div>
+
+
+                <div class="r-nav">
+                    <div class="input">
+                        <input placeholder="What Are You Looking For ?"  />
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                    <a href="{% url 'whistle' %}">
+                    <i class="fa-regular fa-heart" style="font-size: 20px;"></i>
+                    </a>
+                    <a href="{% url 'cart' %}">
+                    <i class="fa-solid fa-cart-arrow-down" style="font-size: 20px;"></i>
+                   </a>
+                    
+                </div>
+            </nav>
+
+
+            <div class="main">
+                <div class="homabt">
+                    <h3>Home/</h3>
+                    <h3 style="color: black;">About</h3>
+                </div>
+
+                <article>
+                    <div class="art art1">
+                        <h1>Our story</h1>
+                        <p>Launced in 2015, Exclusive is South Asia’s premier online shopping makterplace with an active presense in Bangladesh. Supported by wide range of tailored marketing, data and service solutions, Exclusive has 10,500 sallers and 300 brands and serves 3 millioons customers across the region. </p>
+                        <p>Exclusive has more than 1 Million products to offer, growing at a very fast. Exclusive offers a diverse assotment in categories ranging  from consumer.</p>
+                    </div>
+
+
+
+
+
+
+                    <div class="art art2">
+                        <img src="{% static 'images/Side Image (1).png' %}"/>
+                    </div>
+
+                </article>
+
+                <div class="ks-div">
+                    <div class="ks ks1">
+                        <img src="{% static 'images/Services (4).png' %}"/>
+                        <h1><b>10.5k</b></h1>
+                        <p>Sellers Active Our sites</p>
+
+                    </div>
+                    <div class="ks ks2">
+                        <img src="{% static 'images/Services (8).png' %}"/>
+                        <h1><b>33k</b></h1>
+                        <p>Monthly Product Sales</p>
+                    </div>
+                    <div class="ks ks3">
+                        <img src="{% static 'images/Services (6).png' %}"/>
+                        <h1><b>45.5k</b></h1>
+                        <p>Customer Active In our Site</p>
+                    </div>
+                    <div class="ks ks4">
+                        <img src="{% static 'images/Services (7).png' %}"/>
+                        <h1><b>25.5k</b></h1>
+                        <p>Annual gross Sales in Our site</p>
+                    </div>
+                </div>
+
+
+               <div class="services">
+                        <div class="services-div">
+                            <div class="ser ser1">
+                                <img src="{% static 'images/Services (1).png' %}" />
+                                <h3>Free and fast delevery</h3>
+                                <p>free order devevery for all over 140$</p>
+                            </div>
+                            <div class="ser ser2">
+                                <img src="{% static 'images/Services (2).png' %}" />
+                                <h3>24/7 customer services</h3>
+                                <p>Frendly 24/7 customer support</p>
+                            </div>
+                            <div class="ser ser3">
+                                <img src="{% static 'images/Services (3).png' %}" />
+                                <h3>Money return guarenty</h3>
+                                <p>We return money 30 Days</p>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+
+
+
+
+            
+
+
+
+            </div>
+
+            <div class="footer">
+
+                        <div class="fot fot1">
+                           <h2>Exclusive</h2>
+                           <p>Subscribe</p>
+                           <p>Get 10% off for first items</p>
+                            
+                        </div>
+
+
+
+                        <div class="fot fot2">
+                                <h2>Support</h2>
+                           <p>No 111 balaji st,pallavaram,chennai</p>
+                           <p>balaji123@gmail.com</p>
+                           <p>91+ 1234567890</p>
+                        </div>
+
+
+
+                        <div class="fot fot3">
+                            <h2>Account</h2>
+                           <p>My Account</p>
+                           <p>Cart</p>
+                           <p>Whistle</p>
+                           <p>Shop</p>
+                        </div>
+
+
+
+                        <div class="fot fot4">
+                            <h2>Quick Link</h2>
+                            <p>Privacy & Policy</p>
+                            <p>Terms & use</p>
+                            <p>FAQ</p>
+                            <p>Contact</p>
+                        </div>
+
+        </div>
+        <script>
+            function home(){
+                window.location.href="./index.html"
+            }
+        </script>
+        </body>
+        </html>

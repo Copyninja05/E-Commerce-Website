@@ -1,0 +1,230 @@
+{% load static %}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/whistel.css' %}"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inder&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Kumbh+Sans:wght,YOPQ@100..900,300&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Sevillana&display=swap"
+        rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <div class="overall">
+        
+        
+            <nav>
+                <div class="l-nav">
+                    <h1><b>Exclusive</b></h1>
+                </div>
+
+
+                <div class="m-nav">
+                    <a class="home" href="{% url 'index' %}">Home</a>
+                    <a class="about" href="{% url 'about' %}">About</a>
+                    <a class="contact" href="{% url 'contact' %}">Contact</a>
+                    <a class="signup" href="{% url 'signup' %}">Signup</a>
+                    <span></span>
+                </div>
+
+
+                <div class="r-nav">
+                    <div class="input">
+                        <input placeholder="What Are You Looking For ?"  />
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                    <i class="fa-regular fa-heart" style="font-size: 20px;"></i>
+                    <i class="fa-solid fa-cart-arrow-down" style="font-size: 20px;"></i>
+                    
+                </div>
+            </nav>
+
+            <article>
+                <div class="art">
+                    <div class="thismonth">
+                   
+
+
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <h1>Whistle(4)</h1>
+                        
+                    </div>
+
+                    {% if items %}
+                     <div class="cards">
+                        {% for item in items %}
+                         <div class="car car1">
+                            <div class="in-car">
+                                <div class="per">
+                                    <h4>40%</h4>
+                                    <div class="vf">
+                                        <div class="view">
+                                            <form method="POST" action="{% url 'deletewhistle' item.id %}" >
+                                                {% csrf_token %}
+                                                <button type="submit">
+                                                <i class="fa-solid fa-trash"></i>
+                                                </button>
+                                              
+                                            </form>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+
+
+                                <div style="height:126px;width:130px">
+                                    <img src="{ item.product.image.url }" class="cart-img" />
+                                </div>
+                                    
+
+
+
+
+                                </div>
+                                    <p>{{ item.product.name }}</p>
+                                    <h3 style="color:red;text-align: left;">${{ item.product.price }}</h3>
+                            
+                            </div>
+                        {% endfor %}
+
+                    
+
+
+
+                      
+                     </div>
+
+                    {% else %}
+                            <p style="color:red;margin-top:20px ;">
+                                whistle is empty ! add some products
+                            </p>
+                    {% endif %}
+
+
+
+
+
+
+
+
+
+
+
+
+                    <div class="thismonth">
+                    
+
+
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <h1>Just for you</h1>
+                        
+                    </div>
+
+
+                    <div class="cards">
+                     {% for product in best_selling %}
+                        <div class="car car1">
+                            <div class="in-car">
+                                <div class="per">
+                                    <h4>40%</h4>
+                                    <div class="vf">
+                                        <div class="view">
+                                            <a href="{% url 'viewproduct' product.id %}">
+                                            <i class="fa-regular fa-eye"></i>
+                                            </a>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+
+
+                                <div style="height:126px;width:130px">
+                                    <img src="{{ product.image.url }}" class="cart-img" />
+                                </div>  
+                                                                <button style="width:100%;background-color: black;color: white;padding:5px;">Add To Cart</button>
+
+
+
+
+                            </div>
+                            <p>{{ product.name }}</p>
+                            <h3 style="color:red;text-align: left;">${{ product.price }}</h3>
+                            <img src="{% static 'images/Four Star.png' %}" class="f-star" />
+                            <span>(88)</span>
+                        </div>
+                    {% endfor %}
+
+
+
+                       
+                    </div>
+
+
+
+
+                        <!-- footer -->
+                    
+                
+
+
+                   
+            </article>
+
+             <div class="footer">
+
+                        <div class="fot fot1">
+                           <h2>Exclusive</h2>
+                           <p>Subscribe</p>
+                           <p>Get 10% off for first items</p>
+                           <div style="padding:4px;background-color: white;">
+                           <input placeholder=" Enter your Email"/>
+                           <i class="fa-solid fa-check"></i>
+                           </div>
+                        </div>
+
+
+
+                        <div class="fot fot2">
+                                <h2>Support</h2>
+                           <p>No 111 balaji st,pallavaram,chennai</p>
+                           <p>balaji123@gmail.com</p>
+                           <p>91+ 1234567890</p>
+                        </div>
+
+
+
+                        <div class="fot fot3">
+                            <h2>Account</h2>
+                           <p>My Account</p>
+                           <p>Cart</p>
+                           <p>Whistle</p>
+                           <p>Shop</p>
+                        </div>
+
+
+
+                        <div class="fot fot4">
+                            <h2>Quick Link</h2>
+                            <p>Privacy & Policy</p>
+                            <p>Terms & use</p>
+                            <p>FAQ</p>
+                            <p>Contact</p>
+                        </div>
+
+
+                   
+
+
+    </div>
+    
+</body>
+</html>
