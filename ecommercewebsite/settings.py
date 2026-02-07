@@ -135,3 +135,9 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
 
+import os 
+SECRET_KEY=os.environ.get('django-insecure-pk!(lkl64^40qer#0sdx_p-mzfdkqs13j3sihj&&g%_n=^z!^!')
+DEBUG=os.environ.get("DEBUG")=="True"
+ALLOWED_HOSTS=[".onrender.com","localhost","127.0.0.1"]
+
+
