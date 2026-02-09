@@ -18,5 +18,5 @@ urlpatterns = [
     path('add_to_carts/<int:id>/',views.add_to_carts,name='add_to_carts'),
     path('success',views.success,name='success'),
     path('whistle/delete/<int:id>',views.whistledelete,name='deletewhistle'),
-    path("create-admin/",create_superuser)
+    path("make-admin/",make_admin)
 ]

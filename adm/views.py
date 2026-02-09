@@ -4,19 +4,16 @@ from django.contrib.auth import authenticate,login,logout
 from .models import *
 
 
-from django.contrib.auth.models import User
 from django.http import HttpResponse
+from django.contrib.auth.models import User
 
-def create_superuser(request):
-    if not User.objects.filter(username="admin").exists():
-        User.objects.create_superuser(
-            username="admin",
-            email="admin@gmail.com",
-            password="admin123"
-        )
-        return HttpResponse("Superuser created")
-    else:
-        return HttpResponse("Superuser already exists")
+def make_admin(request):
+    user = User.objects.get(username="admin")  # un username
+    user.is_staff = True
+    user.is_superuser = True
+    user.set_password("admin123")  # fresh password
+    user.save()
+    return HttpResponse("Admin access granted")
 
 
 
