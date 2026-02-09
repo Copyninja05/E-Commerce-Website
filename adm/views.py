@@ -8,12 +8,19 @@ from django.http import HttpResponse
 from django.contrib.auth.models import User
 
 def make_admin(request):
-    user = User.objects.get(username="admin")  # un username
+    user, created = User.objects.get_or_create(
+        username="admin",
+        defaults={"email": "admin@example.com"}
+    )
+    user.set_password("admin123")
     user.is_staff = True
     user.is_superuser = True
-    user.set_password("admin123")  # fresh password
     user.save()
-    return HttpResponse("Admin access granted")
+
+    if created:
+        return HttpResponse("Admin user CREATED & access granted")
+    else:
+        return HttpResponse("Admin access granted (existing user)")
 
 
 
