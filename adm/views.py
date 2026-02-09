@@ -4,6 +4,21 @@ from django.contrib.auth import authenticate,login,logout
 from .models import *
 
 
+from django.contrib.auth.models import User
+from django.http import HttpResponse
+
+def create_superuser(request):
+    if not User.objects.filter(username="admin").exists():
+        User.objects.create_superuser(
+            username="admin",
+            email="admin@gmail.com",
+            password="admin123"
+        )
+        return HttpResponse("Superuser created")
+    else:
+        return HttpResponse("Superuser already exists")
+
+
 
 
 # Create your views here.
