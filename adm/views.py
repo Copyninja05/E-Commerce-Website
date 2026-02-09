@@ -4,23 +4,7 @@ from django.contrib.auth import authenticate,login,logout
 from .models import *
 
 
-from django.http import HttpResponse
-from django.contrib.auth.models import User
 
-def make_admin(request):
-    user, created = User.objects.get_or_create(
-        username="admin",
-        defaults={"email": "admin@example.com"}
-    )
-    user.set_password("admin123")
-    user.is_staff = True
-    user.is_superuser = True
-    user.save()
-
-    if created:
-        return HttpResponse("Admin user CREATED & access granted")
-    else:
-        return HttpResponse("Admin access granted (existing user)")
 
 
 
