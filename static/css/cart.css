@@ -235,3 +235,147 @@ button{
             font-family: "Poppins", sans-serif;
         
 }
+
+@media (min-width: 300px) and (max-width: 900px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .art2{
+    width:96%;
+  }
+  .l-nav, .m-nav, .r-nav {
+    width: 100%;
+    justify-content: center;
+  }
+  .m-nav a {
+    font-size: 14px;
+    display: inline-block;
+    margin: 5px;
+  }
+  article {
+    flex-direction: column;
+    padding: 10px;
+  }
+  .art1, .art2 {
+    width: 100%;
+    border-right: none;
+  }
+  .cards, .category .cat-div {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  /* .car {
+    min-width: 150px;
+    margin-bottom: 15px;
+  } */
+  .footer {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+  h1 {
+    font-size: 20px;
+  }
+  p {
+    font-size: 14px;
+  }
+
+  .cards{
+    flex-wrap: nowrap;
+    justify-content: start;
+  }
+
+ 
+
+  .art2,.art-bla{
+    height:33vh;
+  }
+
+  #h1-1{
+    font-size: 25px;
+  }
+
+  article{
+        min-height: 0px;
+  }
+
+  .fls{
+    width:100%;
+    gap:20px;
+  }
+
+  .today{
+    width:40%;
+  }
+
+  .cat{
+    width:100px;
+    height:100px;
+  }
+
+  .blackspeaker{
+    display: none;
+  }
+
+  .grid-div{
+    display: none;
+  }
+
+  .thismonth{
+    padding:0px;
+  }
+
+  .ser h3{
+    font-size: 12px;
+  }
+
+  .ser p{
+    font-size: 11px;
+  }
+
+  article{
+    padding:0px;
+    width:95%;
+    margin: auto;
+  }
+
+  .m-nav{
+    gap:20px;
+  }
+
+  .content{
+    flex-direction: column;
+  }
+
+  .signup1{
+    flex-direction: column;
+  }
+
+  .sign-up{
+    width:100%;
+  }
+
+  .billing-div{
+    flex-direction: column;
+  }
+
+  .bill1{
+    width:100%;
+
+  }
+
+  .bill2{
+    width:100%;
+  }
+
+  .payment{
+    width:100%;
+  }
+
+
+
+ 
+}
