@@ -301,9 +301,7 @@ article{
     justify-content: start;
   }
 
-  .art1{
-    display: none;
-  }
+ 
 
   .art2,.art-bla{
     height:33vh;
@@ -359,5 +357,62 @@ article{
 
  
 }
+
+@media (min-width: 300px) and (max-width: 600px) {
+    .art2 img{
+        height:100%;
+        width:100%;
+    }
+
+    .ks-div{
+        display: flex;
+        flex-wrap: wrap;
+        gap:20px;
+        justify-content: center;
+        align-self:center;
+    }
+
+    .ser img{
+        width:50px;
+        height: 50px;
+    }
+
+    .m-nav{
+        gap:20px;
+    }
+}
+
+@media (min-width: 400px) and (max-width: 600px) {
+
+        .art2 img{
+        height:300px;
+        width:300px;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 900px) {
+
+    .art2 img{
+        height:300px;
+        width:300px;
+    }
+
+    .ks-div{
+        gap:20px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+@media (min-width: 900px) and (max-width: 1200px) {
+    .ks-div{
+        gap:20px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
 
 
