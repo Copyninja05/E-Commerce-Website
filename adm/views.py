@@ -123,7 +123,7 @@ def whistles(request):
    
 def contacts(request):
     if request.method=='POST':
-         print('hello')
+        
          name=request.POST.get('name')
          number=request.POST.get('number')
          email=request.POST.get('email')
