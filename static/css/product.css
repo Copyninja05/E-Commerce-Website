@@ -134,7 +134,7 @@ span,button,input,p{
     padding:20px;
     /* background-color: aqua; */
     margin: auto;
-    height:470px;
+    
     display: flex;
     gap:20px;
 }
@@ -544,6 +544,11 @@ span,button,input,p{
     gap: 9px;
     height: 100%;
 
+}
+
+.car{
+        min-width: 200px;
+    height: 350px;
 }
 
 
