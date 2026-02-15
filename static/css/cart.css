@@ -236,6 +236,8 @@ button{
         
 }
 
+
+
 @media (min-width: 300px) and (max-width: 900px) {
   nav {
     flex-direction: column;
@@ -373,6 +375,27 @@ button{
 
   .payment{
     width:100%;
+  }
+
+ 
+
+  .heading{
+    padding:0px;
+    width:100%;
+  }
+
+   h2{
+    font-size: 12px;
+  }
+
+  main{
+    padding:5px;
+  }
+
+  .total-cart{
+    padding:5px;
+    flex-direction: column;
+    width:88%;
   }
 
 
