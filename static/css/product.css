@@ -317,6 +317,239 @@ span,button,input,p{
     font-size: 15px;
 }
 
+.footer {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 25px;
+    background-color: black;
+}
+
+.fot {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.fot1 input {
+    padding: 7px 15px;
+    outline: none;
+    border: none;
+    font-family: "Poppins", sans-serif;
+
+}
+
+.car {
+    min-width: 200px;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: start;
+    padding: 10px;
+
+    border-radius: 5px;
+    position: relative;
+    background: #fff;
+
+
+
+}
+
+.per {
+    width: 100%;
+
+    height: 8%;
+    padding: 5px;
+    border-radius: 4px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.per h4 {
+    background-color: rgb(219, 68, 68);
+    padding: 5px;
+    border-radius: 3px;
+}
+
+.in-car {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: #f5f5f5;
+    width: 187px;
+    height: 250px;
+    padding: 8px;
+    border-radius: 3px;
+    margin: auto;
+    align-items: center;
+}
+
+
+@media (min-width: 300px) and (max-width: 900px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .art2{
+    width:96%;
+  }
+  .l-nav, .m-nav, .r-nav {
+    width: 100%;
+    justify-content: center;
+  }
+  .m-nav a {
+    font-size: 14px;
+    display: inline-block;
+    margin: 5px;
+  }
+  article {
+    flex-direction: column;
+    padding: 10px;
+  }
+  .art1, .art2 {
+    width: 100%;
+    border-right: none;
+  }
+  .cards, .category .cat-div {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  /* .car {
+    min-width: 150px;
+    margin-bottom: 15px;
+  } */
+  .footer {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+  h1 {
+    font-size: 20px;
+  }
+  p {
+    font-size: 14px;
+  }
+
+  .cards{
+    flex-wrap: nowrap;
+    justify-content: start;
+  }
+
+ 
+
+  .art2,.art-bla{
+    height:33vh;
+  }
+
+  #h1-1{
+    font-size: 25px;
+  }
+
+  article{
+        min-height: 0px;
+  }
+
+  .fls{
+    width:100%;
+    gap:20px;
+  }
+
+  .today{
+    width:40%;
+  }
+
+  .cat{
+    width:100px;
+    height:100px;
+  }
+
+  .blackspeaker{
+    display: none;
+  }
+
+  .grid-div{
+    display: none;
+  }
+
+  .thismonth{
+    padding:0px;
+  }
+
+  .ser h3{
+    font-size: 12px;
+  }
+
+  .ser p{
+    font-size: 11px;
+  }
+
+  article{
+    padding:0px;
+    width:95%;
+    margin: auto;
+  }
+
+  .m-nav{
+    gap:20px;
+  }
+
+  .content{
+    flex-direction: column;
+  }
+
+  .signup1{
+    flex-direction: column;
+  }
+
+  .sign-up{
+    width:100%;
+  }
+
+  .container {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.product-div {
+    width: 100%;
+     padding: 0px; 
+    /* background-color: aqua; */
+    margin: auto;
+    min-height: 470px;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.prod1 {
+    width: 100%;
+    height: 100%;
+    /* background-color: black; */
+    display: flex;
+    gap: 20px;
+}
+
+.prod2 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    height: 100%;
+
+}
+
+
+
+}
+
 
 
 
