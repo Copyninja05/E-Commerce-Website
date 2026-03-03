@@ -1,12 +1,76 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>hello developers</h1>
-    
-</body>
-</html>
+=<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Order Successful</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#135bec",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 48;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display antialiased">
+<div class="relative flex h-screen w-full flex-col overflow-hidden items-center justify-center p-6">
+<!-- Main Success Container -->
+<div class="flex flex-col items-center w-full max-w-sm text-center">
+<!-- Success Icon/Illustration -->
+<div class="mb-8 flex items-center justify-center">
+<div class="relative flex items-center justify-center w-32 h-32 rounded-full bg-primary/10">
+<div class="absolute inset-0 rounded-full animate-pulse bg-primary/5"></div>
+<span class="material-symbols-outlined text-primary text-7xl">
+                        check_circle
+                    </span>
+</div>
+</div>
+<!-- Heading -->
+<h1 class="text-slate-900 dark:text-slate-100 tracking-tight text-3xl font-bold leading-tight mb-3">
+                Order Successful
+            </h1>
+<!-- Subtext -->
+<p class="text-slate-600 dark:text-slate-400 text-lg font-normal leading-relaxed mb-12">
+                Your order has been placed successfully.
+            </p>
+<!-- Action Button -->
+<div class="w-full">
+<button class="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-xl h-14 px-8 bg-primary text-white text-lg font-semibold shadow-lg shadow-primary/20 hover:opacity-90 transition-opacity">
+<span class="truncate">Continue Shopping</span>
+</button>
+</div>
+</div>
+<!-- Minimal Decorative Background Element -->
+<div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-1/2 bg-gradient-to-b from-primary/5 to-transparent pointer-events-none -z-10"></div>
+</div>
+</body></html>
