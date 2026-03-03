@@ -82,7 +82,7 @@
 
 
                                 <div style="height:126px;width:130px">
-                                    <img src="{ item.product.image.url }" class="cart-img" />
+                                    <img src="{ item.products.image.url }" class="cart-img" />
                                 </div>
                                     
 
@@ -90,8 +90,8 @@
 
 
                                 </div>
-                                    <p>{{ item.product.name }}</p>
-                                    <h3 style="color:red;text-align: left;">${{ item.product.price }}</h3>
+                                    <p>{{ item.products.name }}</p>
+                                    <h3 style="color:red;text-align: left;">${{ item.products.price }}</h3>
                             
                             </div>
                         {% endfor %}
