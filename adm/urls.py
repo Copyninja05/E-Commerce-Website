@@ -3,6 +3,10 @@ from django.urls import path
 from .views import *
 from . import views
 
+from .views import create_admin
+
+
+
 urlpatterns = [
    
     path('',views.index,name='index'),
@@ -17,6 +21,7 @@ urlpatterns = [
     path('whistle/add/<int:id>/',views.add_to_whistle,name='add_to_whistle'),
     path('add_to_carts/<int:id>/',views.add_to_carts,name='add_to_carts'),
     path('success',views.success,name='success'),
-    path('whistle/delete/<int:id>',views.whistledelete,name='deletewhistle')
+    path('whistle/delete/<int:id>',views.whistledelete,name='deletewhistle'),
+    path('create-admin/', create_admin),
    
 ]
