@@ -1,4 +1,3 @@
-console.log("abc")
 let demo=document.getElementById("demo"),
 mobile=document.getElementById("mobile"),
 h1=document.getElementById("h1-1"),

@@ -127,12 +127,15 @@ def checkout(request):
 
 
 def cart(request):
-     
-     items= add_to_cart.objects.filter(user=request.user)
-     return render(request,'cart.html',{'items':items})
+    if not request.user.is_authenticated:
+        return redirect('login')
+    items= add_to_cart.objects.filter(user=request.user)
+    return render(request,'cart.html',{'items':items})
 
 
 def whistles(request):
+    if not request.user.is_authenticated:
+        return redirect('login')
     items= whistle.objects.filter(user=request.user)
     best_selling=product.objects.filter(sections='best')
     return render(request,'whistle.html',{'items':items,'best_selling':best_selling})
@@ -146,25 +149,21 @@ def contacts(request):
          email=request.POST.get('email')
          message=request.POST.get('message')
 
-         if name=="" or number=="" or email=="" or message=="":
-          print('hello')
-          return render(request,'contact.html',{'error':'enter all the field'})
+         if name=="" or number=="" or email=="" or message=="" :
+          return render(request,'contact.html',{'error':'enter all the fields'})
           
     
-         if User.objects.filter(username=email).exists():
-          contactdetails.objects.create(
+         contactdetails.objects.create(
             name=name,
             mobilenum=number,
             email=email,
             message=message
           )
-          return render(request,'contact.html',{'error':'your message is send'})
-         else: 
-          return render(request,'contact.html',{'error':'email does not match'})
+    return render(request,'contact.html',{'success':'your message has been sent'})
     
         
 
-    return render(request,'contact.html',{'saved':'your message is send'})
+        
 
 
     
