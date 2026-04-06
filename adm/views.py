@@ -226,6 +226,8 @@ def login_view(request):
 
 
 def products(request,id):
+    if not request.user.is_authenticated:
+        return redirect('login')
     flash_sale=product.objects.filter(sections='flash')
     best_selling=product.objects.filter(sections='best')
     explore=product.objects.filter(sections='explore')
